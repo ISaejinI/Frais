@@ -46,7 +46,8 @@ export default function Weather() {
 
         fetchWeather();
     }, []);
-    const temperature = weatherData?.current.temperature_2m;
+    const temperature = Math.round(weatherData?.current.temperature_2m || 0);
+    const apparent_temperature = Math.round(weatherData?.current.apparent_temperature || 0);
 
     if (loading) {
         return <div>Chargement des données météo...</div>
@@ -61,7 +62,7 @@ export default function Weather() {
             <p>Il est actuellement {new Date().toLocaleTimeString()}</p>
             <p>Il fait {weatherData?.current.is_day ? "jour" : "nuit"}</p>
             <p>Il fait actuellement {temperature}°C</p>
-            <p>La température ressentie est {weatherData?.current.apparent_temperature}°C</p>
+            <p>La température ressentie est {apparent_temperature}°C</p>
             <p>Le code météo actuel est {weatherData?.current.weather_code}</p>
         </div>
     )
