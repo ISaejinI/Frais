@@ -1,6 +1,7 @@
 "use client"
 
 import { createContext, useContext, useState } from "react"
+import { getCurrentHour } from "@/utils/time"
 
 const SandboxContext = createContext(null)
 
@@ -9,7 +10,7 @@ export function useSandbox() {
 }
 
 export default function SandboxLayout({ children }) {
-    const [hour, setHour] = useState(new Date().getHours());
+    const [hour, setHour] = useState(getCurrentHour());
     const [temp, setTemp] = useState(22);
 
     return (
