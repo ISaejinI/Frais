@@ -32,7 +32,9 @@ jobs:
         run: |
           lftp -c "
           set ftp:ssl-allow no;
-          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' ${{ secrets.FTP_HOST }};
-          mirror --reverse --delete --verbose ./out ${{ secrets.FTP_TARGET_DIR }};
+          set net:timeout 20;
+          set net:max-retries 2;
+          open -u '${{ secrets.FTP_USERNAME }}','${{ secrets.FTP_PASSWORD }}' '${{ secrets.FTP_HOST }}';
+          mirror --reverse --delete --verbose ./out '${{ secrets.FTP_TARGET_DIR }}';
           bye
           "
