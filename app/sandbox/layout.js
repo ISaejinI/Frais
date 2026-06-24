@@ -1,20 +1,16 @@
 "use client"
 
-import { createContext, useContext, useState } from "react"
+import { useState } from "react"
+import { SandboxContext } from "@/contexts/SandboxContext"
 import { getCurrentHour } from "@/utils/time"
-
-const SandboxContext = createContext(null)
-
-export function useSandbox() {
-    return useContext(SandboxContext)
-}
 
 export default function SandboxLayout({ children }) {
     const [hour, setHour] = useState(getCurrentHour());
     const [temp, setTemp] = useState(22);
+    const [isStatic, setIsStatic] = useState(false);
 
     return (
-        <SandboxContext.Provider value={{ hour, temp, setHour, setTemp }}>
+        <SandboxContext.Provider value={{ hour, setHour, temp, setTemp, isStatic, setIsStatic }}>
             <section className="min-h-screen bg-[#e9f3f5] text-black">
                 <main className="flex min-h-screen">
                     <div className="flex flex-1 items-center justify-center overflow-auto p-10">
@@ -43,25 +39,39 @@ export default function SandboxLayout({ children }) {
                         <div className="mt-8 rounded-3xl bg-white p-5 shadow-sm">
                             <p className="text-sm font-semibold">Aperçu</p>
                             <div className="mt-2 text-sm text-slate-500">
-                                <p>Il est {hour}:{new Date().getMinutes()}</p>
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="23"
-                                    value={hour}
-                                    onChange={(e) => setHour(Number(e.target.value))}
-                                    className="w-full mt-2"
-                                />
+                                <div className="flex items-center">
+                                    <p>Activer les données statiques</p>
+                                    <input
+                                        type="checkbox"
+                                        checked={isStatic}
+                                        onChange={(e) => setIsStatic(e.target.checked)}
+                                        className="ml-2 h-4 w-4 rounded border-slate-300 text-slate-600 focus:ring-slate-400"
+                                    />
+                                </div>
 
-                                <p>Il fait : {temp}°C</p>
-                                <input
-                                    type="range"
-                                    min="0"
-                                    max="40"
-                                    value={temp}
-                                    onChange={(e) => setTemp(Number(e.target.value))}
-                                    className="w-full mt-2"
-                                />
+                                {isStatic && (
+                                    <>
+                                        <p>Il est {hour}:{new Date().getMinutes()}</p>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="23"
+                                            value={hour}
+                                            onChange={(e) => setHour(Number(e.target.value))}
+                                            className="w-full mt-2"
+                                        />
+        
+                                        <p>Il fait : {temp}°C</p>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="40"
+                                            value={temp}
+                                            onChange={(e) => setTemp(Number(e.target.value))}
+                                            className="w-full mt-2"
+                                        />
+                                    </>
+                                )}
                             </div>
                         </div>
                     </aside>

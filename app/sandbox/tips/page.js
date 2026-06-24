@@ -1,5 +1,5 @@
 import TipsScreen from "@/components/app/TipsScreen"
 
-export default function TipsPage() {
+export default function SandboxTipsPage() {
     return <TipsScreen />
 }

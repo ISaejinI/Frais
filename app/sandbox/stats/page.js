@@ -1,5 +1,5 @@
 import StatsScreen from "@/components/app/StatsScreen"
 
-export default function StatsPage() {
+export default function SandboxStatsPage() {
     return <StatsScreen />
 }
