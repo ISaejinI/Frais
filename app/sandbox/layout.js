@@ -16,57 +16,57 @@ export default function SandboxLayout({ children }) {
     return (
         <SandboxContext.Provider value={{ hour, temp, setHour, setTemp }}>
             <section className="min-h-screen bg-[#e9f3f5] text-black">
-            <main className="flex min-h-screen">
-                <div className="flex flex-1 items-center justify-center overflow-auto p-10">
-                    <div className="relative">
-                        <div className="absolute inset-0 translate-y-8 rounded-[60px] bg-black/20 blur-3xl" />
-                        <div className="relative rounded-[56px] bg-[#111] p-4 shadow-2xl">
-                        <div className="absolute left-1/2 top-5 z-20 h-7 w-32 -translate-x-1/2 rounded-full bg-black" />
-                        <div className="absolute -left-1 top-32 h-16 w-1 rounded-l-full bg-[#222]" />
-                        <div className="absolute -right-1 top-40 h-24 w-1 rounded-r-full bg-[#222]" />
-                        <div className="relative h-[844px] w-[390px] overflow-hidden rounded-[44px] bg-white">
-                            {children}
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
-                <aside className="w-[320px] border-l border-black/10 bg-white/70 p-6 backdrop-blur-md">
-                    <p className="text-sm font-semibold uppercase text-slate-500">Frais</p>
-
-                    <h1 className="mt-2 text-2xl font-bold">Mode Sandbox</h1>
-
-                    <p className="mt-4 text-sm text-slate-600">
-                        Cette zone permet de tester les composants de l’application dans un aperçu mobile réaliste.
-                    </p>
-
-                    <div className="mt-8 rounded-3xl bg-white p-5 shadow-sm">
-                        <p className="text-sm font-semibold">Aperçu</p>
-                        <div className="mt-2 text-sm text-slate-500">
-                            <p>Il est {hour}:{new Date().getMinutes()}</p>
-                            <input
-                                type="range"
-                                min="0"
-                                max="23"
-                                value={hour}
-                                onChange={(e) => setHour(Number(e.target.value))}
-                                className="w-full mt-2"
-                            />
-
-                            <p>Il fait : {temp}°C</p>
-                            <input
-                                type="range"
-                                min="0"
-                                max="40"
-                                value={temp}
-                                onChange={(e) => setTemp(Number(e.target.value))}
-                                className="w-full mt-2"
-                            />
+                <main className="flex min-h-screen">
+                    <div className="flex flex-1 items-center justify-center overflow-auto p-10">
+                        <div className="relative">
+                            <div className="absolute inset-0 translate-y-8 rounded-[60px] bg-black/20 blur-3xl" />
+                            <div className="relative rounded-[56px] bg-[#111] p-4 shadow-2xl">
+                            <div className="absolute left-1/2 top-5 z-20 h-7 w-32 -translate-x-1/2 rounded-full bg-black" />
+                            <div className="absolute -left-1 top-32 h-16 w-1 rounded-l-full bg-[#222]" />
+                            <div className="absolute -right-1 top-40 h-24 w-1 rounded-r-full bg-[#222]" />
+                            <div className="relative h-[844px] w-[390px] overflow-hidden rounded-[44px] bg-white">
+                                {children}
+                            </div>
+                            </div>
                         </div>
                     </div>
-                </aside>
-            </main>
-        </section>
+
+                    <aside className="w-[320px] border-l border-black/10 bg-white/70 p-6 backdrop-blur-md">
+                        <p className="text-sm font-semibold uppercase text-slate-500">Frais</p>
+
+                        <h1 className="mt-2 text-2xl font-bold">Mode Sandbox</h1>
+
+                        <p className="mt-4 text-sm text-slate-600">
+                            Cette zone permet de tester les composants de l’application dans un aperçu mobile réaliste.
+                        </p>
+
+                        <div className="mt-8 rounded-3xl bg-white p-5 shadow-sm">
+                            <p className="text-sm font-semibold">Aperçu</p>
+                            <div className="mt-2 text-sm text-slate-500">
+                                <p>Il est {hour}:{new Date().getMinutes()}</p>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="23"
+                                    value={hour}
+                                    onChange={(e) => setHour(Number(e.target.value))}
+                                    className="w-full mt-2"
+                                />
+
+                                <p>Il fait : {temp}°C</p>
+                                <input
+                                    type="range"
+                                    min="0"
+                                    max="40"
+                                    value={temp}
+                                    onChange={(e) => setTemp(Number(e.target.value))}
+                                    className="w-full mt-2"
+                                />
+                            </div>
+                        </div>
+                    </aside>
+                </main>
+            </section>
         </SandboxContext.Provider>
     )
 }
