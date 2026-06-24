@@ -31,7 +31,7 @@ export default function SandboxLayout({ children }) {
                         </div>
                     </div>
 
-                    <aside className="w-[320px] border-l border-black/10 bg-white/70 p-6 backdrop-blur-md">
+                    <aside className="w-[320px] border-l border-black/10 bg-white/70 p-6 backdrop-blur-md font-[arial]">
                         <p className="text-sm font-semibold uppercase text-slate-500">Frais</p>
 
                         <h1 className="mt-2 text-2xl font-bold">Mode Sandbox</h1>
