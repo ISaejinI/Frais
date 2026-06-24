@@ -1,13 +1,8 @@
 "use client"
 
-import { createContext, useContext, useState } from "react"
+import { useState } from "react"
+import { SandboxContext } from "@/contexts/SandboxContext"
 import { getCurrentHour } from "@/utils/time"
-
-const SandboxContext = createContext(null)
-
-export function useSandbox() {
-    return useContext(SandboxContext)
-}
 
 export default function SandboxLayout({ children }) {
     const [hour, setHour] = useState(getCurrentHour());
@@ -15,7 +10,7 @@ export default function SandboxLayout({ children }) {
     const [isStatic, setIsStatic] = useState(false);
 
     return (
-        <SandboxContext.Provider value={{ hour, temp, setHour, setTemp, isStatic, setIsStatic }}>
+        <SandboxContext.Provider value={{ hour, setHour, temp, setTemp, isStatic, setIsStatic }}>
             <section className="min-h-screen bg-[#e9f3f5] text-black">
                 <main className="flex min-h-screen">
                     <div className="flex flex-1 items-center justify-center overflow-auto p-10">
