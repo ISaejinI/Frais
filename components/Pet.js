@@ -6,7 +6,7 @@ export default function Pet({ score }) {
 
     return (
         <div>
-            <Image src={`/pet-states/${petState.imgUrl}`} alt={petState.name} width={100} height={100} loading="eager" />
+            <Image src={`/pet-states/${petState.imgUrl}`} alt={petState.name} width={196} height={196} loading="eager" />
         </div>
     )
 }

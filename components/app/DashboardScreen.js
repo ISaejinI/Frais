@@ -4,7 +4,7 @@ import { useSandbox } from "@/contexts/SandboxContext"
 import { useScore } from "@/contexts/ScoreContext"
 import Image from "next/image"
 
-import Welcome from "@/components/Location"
+import Location from "@/components/Location"
 import Weather from "@/components/Weather"
 import HourlyGradientBackground from "@/components/HourlyGradient"
 import Pet from "@/components/Pet"
@@ -36,9 +36,11 @@ export default function DashboardScreen() {
             <HourlyGradientBackground staticHour={staticHour}>
                 <div className="px-6 pt-6 pb-10 flex">
                     <div className="w-1/2">
-                        <Welcome />
+                        <Location />
                         <Weather staticTemp={staticTemp} />
-                        <PetQuote score={displayScore} />
+                        <div className="mt-6 min-h-30 flex flex-col justify-end">
+                            <PetQuote score={displayScore} />
+                        </div>
                     </div>
                     <div className="flex items-end w-1/2">
                         <Pet score={displayScore} />
