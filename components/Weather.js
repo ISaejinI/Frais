@@ -59,11 +59,8 @@ export default function Weather() {
 
     return (
         <div>
-            <p>Il est actuellement {new Date().toLocaleTimeString()}</p>
-            <p>Il fait {weatherData?.current.is_day ? "jour" : "nuit"}</p>
-            <p>Il fait actuellement {temperature}°C</p>
-            <p>La température ressentie est {apparent_temperature}°C</p>
-            <p>Le code météo actuel est {weatherData?.current.weather_code}</p>
+            <p className="text-8xl font-semibold">{temperature}°</p>
+            <p>À l'extérieur</p>
         </div>
     )
 }

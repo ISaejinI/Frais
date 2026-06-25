@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import { useSandbox } from "@/contexts/SandboxContext"
 
-import Welcome from "@/components/Welcome"
+import Welcome from "@/components/Location"
 import Weather from "@/components/Weather"
 import HourlyGradientBackground from "@/components/HourlyGradient"
 import Pet from "@/components/Pet"
@@ -33,13 +33,17 @@ export default function DashboardScreen() {
     return (
         <main className="relative min-h-full">
             <HourlyGradientBackground staticHour={staticHour}>
-                <Pet score={staticScore ?? score} />
-                <div>
-                    <Welcome />
-                    <Weather staticTemp={staticTemp} />
+                <div className="px-6 pt-6 pb-10 flex">
+                    <div>
+                        <Welcome />
+                        <Weather staticTemp={staticTemp} />
+                    </div>
+                    <div className="flex items-end">
+                        <Pet score={staticScore ?? score} />
+                    </div>
                 </div>
             </HourlyGradientBackground>
-            <div className="p-4 rounded-t-2xl">
+            <div className="relative p-4 rounded-t-2xl -mt-5 z-10 bg-[#F2F7F7] flex flex-col gap-4">
                 <PetHumorBar score={staticScore ?? score} />
                 {/* <CurrentTips /> */}
             </div>
