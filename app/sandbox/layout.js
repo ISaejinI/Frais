@@ -5,12 +5,13 @@ import { SandboxContext } from "@/contexts/SandboxContext"
 import { getCurrentHour } from "@/utils/time"
 
 export default function SandboxLayout({ children }) {
+    const [isStatic, setIsStatic] = useState(false);
     const [hour, setHour] = useState(getCurrentHour());
     const [temp, setTemp] = useState(22);
-    const [isStatic, setIsStatic] = useState(false);
+    const [score, setScore] = useState(50);
 
     return (
-        <SandboxContext.Provider value={{ hour, setHour, temp, setTemp, isStatic, setIsStatic }}>
+        <SandboxContext.Provider value={{ hour, setHour, temp, setTemp, isStatic, setIsStatic, score, setScore }}>
             <section className="min-h-screen bg-[#e9f3f5] text-black">
                 <main className="flex min-h-screen">
                     <div className="flex flex-1 items-center justify-center overflow-auto p-10">
@@ -68,6 +69,16 @@ export default function SandboxLayout({ children }) {
                                             max="40"
                                             value={temp}
                                             onChange={(e) => setTemp(Number(e.target.value))}
+                                            className="w-full mt-2"
+                                        />
+
+                                        <p>Score : {score}</p>
+                                        <input
+                                            type="range"
+                                            min="0"
+                                            max="100"
+                                            value={score}
+                                            onChange={(e) => setScore(Number(e.target.value))}
                                             className="w-full mt-2"
                                         />
                                     </>
