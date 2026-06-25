@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       lang="fr"
       className={`${fredoka.variable} h-full antialiased`}
     >
-      <body className="min-h-full relative">
+      <body className="min-h-full relative bg-[#F2F7F7]">
         <Providers>
           {children}
           <TapBar />
