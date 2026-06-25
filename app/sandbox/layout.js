@@ -10,7 +10,7 @@ export default function SandboxLayout({ children }) {
     const [isStatic, setIsStatic] = useState(false);
     const [hour, setHour] = useState(getCurrentHour());
     const [temp, setTemp] = useState(22);
-    const [score, setScore] = useState(50);
+    const [score, setScore] = useState(5);
 
     return (
         <SandboxContext.Provider value={{ hour, setHour, temp, setTemp, isStatic, setIsStatic, score, setScore }}>

@@ -25,3 +25,21 @@ body {
   color: var(--foreground);
   font-family: var(--font-fredoka), Arial, Helvetica, sans-serif;
 }
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-lg text-base font-semibold flex items-center gap-2 bg-[#14B8C4] text-white cursor-pointer;
+
+    &.has-icon {
+      @apply pr-3
+    }
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 rounded-lg border border-(--border-color) text-base font-semibold cursor-pointer !text-[#46585A];
+
+    &.has-icon {
+      @apply pr-3
+    }
+  }
+}

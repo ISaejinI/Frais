@@ -92,17 +92,17 @@ export const hourlyGradients = [
   {
     hour: 18,
     gradient: "linear-gradient(180deg, #FFCC8E 0%, #FAC194 55%)",
-    fontColor: "#f9fbfb"
+    fontColor: "#090b0c"
   },
   {
     hour: 19,
     gradient: "linear-gradient(180deg, #F9C094 0%, #EDB39E 55%)",
-    fontColor: "#f9fbfb"
+    fontColor: "#090b0c"
   },
   {
     hour: 20,
     gradient: "linear-gradient(180deg, #EDB39E 0%, #B392AE 55%)",
-    fontColor: "#f9fbfb"
+    fontColor: "#090b0c"
   },
   {
     hour: 21,
