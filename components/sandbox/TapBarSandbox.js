@@ -25,17 +25,17 @@ export default function TapBar() {
                 Accueil
                 <div className={`h-1 w-5 rounded-full ${isActive('/sandbox/dashboard') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/sandbox/stats" className={`flex flex-col items-center ${isActive('/sandbox/stats') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/sandbox/stats') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/sandbox/stats') ? StatsIconSelected : StatsIcon} alt="" className="h-8 w-auto" />
                 Stats
                 <div className={`h-1 w-5 rounded-full ${isActive('/sandbox/stats') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/sandbox/tips" className={`flex flex-col items-center ${isActive('/sandbox/tips') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/sandbox/tips') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/sandbox/tips') ? TipsIconSelected : TipsIcon} alt="" className="h-8 w-auto" />
                 Conseils
                 <div className={`h-1 w-5 rounded-full ${isActive('/sandbox/tips') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/sandbox/settings" className={`flex flex-col items-center ${isActive('/sandbox/settings') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/sandbox/settings') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/sandbox/settings') ? SettingsIconSelected : SettingsIcon} alt="" className="h-8 w-auto" />
                 Réglages
                 <div className={`h-1 w-5 rounded-full ${isActive('/sandbox/settings') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>

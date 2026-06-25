@@ -29,17 +29,17 @@ export default function TapBar() {
                 Accueil
                 <div className={`h-1 w-5 rounded-full ${isActive('/dashboard') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/stats" className={`flex flex-col items-center ${isActive('/stats') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/stats') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/stats') ? StatsIconSelected : StatsIcon} alt="" className="h-8 w-auto" />
                 Stats
                 <div className={`h-1 w-5 rounded-full ${isActive('/stats') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/tips" className={`flex flex-col items-center ${isActive('/tips') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/tips') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/tips') ? TipsIconSelected : TipsIcon} alt="" className="h-8 w-auto" />
                 Conseils
                 <div className={`h-1 w-5 rounded-full ${isActive('/tips') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
             </Link>
-            <Link href="/settings" className={`flex flex-col items-center ${isActive('/settings') ? 'text-(--active-color)' : 'text-black'}`}>
+            <Link href="#" className={`flex flex-col items-center ${isActive('/settings') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/settings') ? SettingsIconSelected : SettingsIcon} alt="" className="h-8 w-auto" />
                 Réglages
                 <div className={`h-1 w-5 rounded-full ${isActive('/settings') ? 'bg-(--active-color)' : 'bg-transparent'}`}></div>
