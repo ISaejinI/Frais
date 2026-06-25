@@ -3,7 +3,7 @@
 import { fetchWeatherApi } from "openmeteo";
 import { useEffect, useState } from "react"
 
-export default function Weather() {
+export default function Weather({ staticTemp = null }) {
     const [weatherData, setWeatherData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
@@ -46,8 +46,17 @@ export default function Weather() {
 
         fetchWeather();
     }, []);
+
+    if (staticTemp !== null) {
+        return (
+            <div>
+                <p className="text-8xl font-semibold">{staticTemp}°</p>
+                <p>À l&apos;extérieur</p>
+            </div>
+        )
+    }
+
     const temperature = Math.round(weatherData?.current.temperature_2m || 0);
-    const apparent_temperature = Math.round(weatherData?.current.apparent_temperature || 0);
 
     if (loading) {
         return <div>Chargement des données météo...</div>
@@ -60,7 +69,7 @@ export default function Weather() {
     return (
         <div>
             <p className="text-8xl font-semibold">{temperature}°</p>
-            <p>À l'extérieur</p>
+            <p>À l&apos;extérieur</p>
         </div>
     )
 }
