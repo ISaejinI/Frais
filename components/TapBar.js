@@ -23,7 +23,7 @@ export default function TapBar() {
     const isActive = (href) => pathname === href
 
     return (
-        <nav className="absolute bottom-4 right-3.5 left-3.5 z-10 rounded-3xl flex justify-between bg-white px-8 py-3 gap-4 border border-(--border-color)">
+        <nav className="fixed bottom-4 right-3.5 left-3.5 z-10 rounded-3xl flex justify-between bg-white px-8 py-3 gap-4 border border-(--border-color)">
             <Link href="/dashboard" className={`flex flex-col items-center ${isActive('/dashboard') ? 'text-(--active-color)' : 'text-black'}`}>
                 <Image src={isActive('/dashboard') ? DashboardIconSelected : DashboardIcon} alt="" className="h-8 w-auto" />
                 Accueil
