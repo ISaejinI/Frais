@@ -34,14 +34,14 @@ export const petStates = [
     },
     {
         id: 3,
-        name: "Un peu chaud",
+        name: "En nage",
         humor: "sad",
         imgUrl: "pet-distress.svg",
         descBeforeAction: "OK, je commence officiellement à bouillir... S'il te plaît, ferme ce store ou coupe une lumière, j'ai chaud !",
         descAfterAction: "C'est pas encore le pôle Nord, mais je revis ! Merci d'avoir agi, mes circuits reprennent des couleurs.",
         scoreMax: 44,
         scoreMin: 25,
-        color: "#F49E14"
+        color: "#F6AF3C"
     },
     {
         id: 4,
@@ -52,7 +52,7 @@ export const petStates = [
         descAfterAction: "Merci... L'incendie thermique est éteint. On repart de loin alors on ne lâche rien, garde cette pièce bien close !",
         scoreMax: 24,
         scoreMin: 5,
-        color: "#F46725"
+        color: "#E97C49"
     },
     {
         id: 5,
@@ -63,6 +63,6 @@ export const petStates = [
         descAfterAction: "Gloups... Je me re-condense ! Merci pour cette bouffée d'air frais, j'ai bien failli finir en vapeur d'eau.",
         scoreMax: 4,
         scoreMin: 0,
-        color: "#F46725"
+        color: "#E97C49"
     }
 ]
