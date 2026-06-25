@@ -4,6 +4,8 @@ import { useState } from "react"
 import { SandboxContext } from "@/contexts/SandboxContext"
 import { getCurrentHour } from "@/utils/time"
 
+import TapBarSandbox from "@/components/sandbox/TapBarSandbox"
+
 export default function SandboxLayout({ children }) {
     const [isStatic, setIsStatic] = useState(false);
     const [hour, setHour] = useState(getCurrentHour());
@@ -18,11 +20,11 @@ export default function SandboxLayout({ children }) {
                         <div className="relative">
                             <div className="absolute inset-0 translate-y-8 rounded-[60px] bg-black/20 blur-3xl" />
                             <div className="relative rounded-[56px] bg-[#111] p-4 shadow-2xl">
-                            <div className="absolute left-1/2 top-5 z-20 h-7 w-32 -translate-x-1/2 rounded-full bg-black" />
                             <div className="absolute -left-1 top-32 h-16 w-1 rounded-l-full bg-[#222]" />
                             <div className="absolute -right-1 top-40 h-24 w-1 rounded-r-full bg-[#222]" />
                             <div className="relative h-[844px] w-[390px] overflow-hidden rounded-[44px] bg-white">
                                 {children}
+                                <TapBarSandbox />
                             </div>
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 import { Fredoka } from "next/font/google";
 import "./globals.css";
+import TapBar from "@/components/TapBar";
 
 const fredoka = Fredoka({
   variable: "--font-fredoka",
@@ -17,8 +18,9 @@ export default function RootLayout({ children }) {
       lang="fr"
       className={`${fredoka.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full relative">
         {children}
+        <TapBar />
       </body>
     </html>
   );
